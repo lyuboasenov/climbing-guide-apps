@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'seed-home',
+    selector: 'climbing-guide',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

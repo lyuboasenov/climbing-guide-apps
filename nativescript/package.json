@@ -1,9 +1,9 @@
 {
-  "name": "angular-native-seed",
+  "name": "climbing-guide-native-client",
   "version": "0.0.0",
-  "repository": "<fill-your-repository-here>",
+  "repository": "https://github.com/lyuboasenov/climbing-guide-apps.git",
   "nativescript": {
-    "id": "com.domain.project",
+    "id": "com.climbing.guide.ns.client",
     "tns-ios": {
       "version": "3.1.0"
     },

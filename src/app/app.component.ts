@@ -8,7 +8,7 @@ declare const require: any;
 
 @Component({
     moduleId: module.id,
-    selector: 'maestro-app',
+    selector: 'climbing-guide-app',
     templateUrl: './app.component.html',
 })
 export class AppComponent {

@@ -3,6 +3,7 @@
 // @author Nathan Walker
 // @author Sean Perkins
 // -----------------------------------------------------------
+
 "use strict";
 
 var debugging = false;
@@ -14,9 +15,11 @@ var path = require('path');
 var webAppPath = './src/app';
 var webFontsPath = './src/fonts';
 var webAssetsPath = './src/assets';
+var webEnvironmentsPath = './src/environments';
 var nativescriptAppPath = './nativescript/src/app/';
 var nativescriptFontsPath = './nativescript/src/fonts/';
 var nativescriptAssetsPath = './nativescript/src/assets';
+var nativescriptEnvironmentsPath = './nativescript/src/environments';
 
 // Root SymLink Code for Windows
 if (process.argv.length > 2) {
@@ -43,6 +46,9 @@ try {
     }
     if (fs.existsSync(resolve(nativescriptAssetsPath))) {
         fs.unlinkSync(resolve(nativescriptAssetsPath));
+    }
+    if (fs.existsSync(resolve(nativescriptEnvironmentsPath))) {
+        fs.unlinkSync(resolve(nativescriptEnvironmentsPath));
     }
 } catch (err) {}
 
@@ -118,6 +124,7 @@ function createSymLink() {
     fs.symlinkSync(resolve(webAppPath), resolve(nativescriptAppPath), 'junction');
     fs.symlinkSync(resolve(webFontsPath), resolve(nativescriptFontsPath), 'junction');
     fs.symlinkSync(resolve(webAssetsPath), resolve(nativescriptAssetsPath), 'junction');
+    fs.symlinkSync(resolve(webEnvironmentsPath), resolve(nativescriptEnvironmentsPath), 'junction');
 }
 
 function splitPath(v) {
