@@ -8,6 +8,18 @@
 // Import the theme’s main ruleset.
 @import '~nativescript-theme-core/scss/index';
 
+// Import common styles
+@import 'styles/cg-common.scss';
+
+// Import material icons
+@import 'styles/materialicons.scss';
+
+// Import font awesome
+@import 'styles/fontawesome.scss';
+
+// Import font awesome solid
+@import 'styles/solid.scss';
+
 .container {
     margin:40;
 }

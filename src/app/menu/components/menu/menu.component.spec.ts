@@ -37,9 +37,10 @@ describe('MenuComponent', () => {
 
     describe('menu items', () => {
 
-        it('should render 2 items', () => {
+        it('should render 3 items', () => {
             component.items = [
                 { title: 'menu.home', link: ['/home'] },
+                { title: 'menu.guide', link: ['/guide'] },
                 { title: 'menu.about', link: ['/about'] }
             ];
             fixture.detectChanges();

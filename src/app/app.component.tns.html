@@ -1,8 +1,68 @@
-<GridLayout rows="auto, *">
-    <StackLayout>
-        <seed-menu [items]="menuItems"></seed-menu>
-    </StackLayout>
-    <StackLayout class="container" row="1">
-        <router-outlet></router-outlet>
-    </StackLayout>
-</GridLayout>
+<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+   <grid-layout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+         <stack-layout row="0" class="sidedrawer-header">
+            <Label class="sidedrawer-header-image fa" text="&#xf2bd;"></Label>
+            <Label class="sidedrawer-header-brand" text="User Name"></Label>
+            <Label class="footnote" text="username@mail.com"></Label>
+         </stack-layout>
+   
+         <scroll-view row="1">
+            <stack-layout class="sidedrawer-content">
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
+                     <Label col="0" text="&#xf015;" class="fa"></Label>
+                     <Label col="1" text="Home" class="p-r-10"></Label>
+               </grid-layout>
+
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/guide')" (tap)="onNavItemTap('/guide')">
+                     <Label col="0" text="&#xf02d;" class="fa"></Label>
+                     <Label col="1" text="Guide" class="p-r-10"></Label>
+               </grid-layout>
+
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/map')" (tap)="onNavItemTap('/map')">
+                  <Label col="0" text="&#xf5a0;" class="fa"></Label>
+                  <Label col="1" text="Map" class="p-r-10"></Label>
+               </grid-layout>
+
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
+                     <Label col="0" text="&#xf002;" class="fa"></Label>
+                     <Label col="1" text="Search" class="p-r-10"></Label>
+               </grid-layout>
+
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/featured')" (tap)="onNavItemTap('/featured')">
+                     <Label col="0" text="&#xf005;" class="fa"></Label>
+                     <Label col="1" text="Featured" class="p-r-10"></Label>
+               </grid-layout>
+   
+               <stack-layout class="hr-light"></stack-layout>
+
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/user')" (tap)="onNavItemTap('/user')">
+                     <Label col="0" text="&#xf007;" class="fa"></Label>
+                     <Label col="1" text="Profile" class="p-r-10"></Label>
+               </grid-layout>
+
+               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                     <Label col="0" text="&#xf013;" class="fa"></Label>
+                     <Label col="1" text="Settings" class="p-r-10"></Label>
+               </grid-layout>
+            </stack-layout>
+         </scroll-view>
+   </grid-layout>
+
+   <grid-layout tkMainContent rows="auto,*,auto">
+      <grid-layout row="0" columns="auto,*">
+         <Label col="0" row="0" class="fa fa-36" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+         <!--<SVGImage col="1" row="0" src="~/assets/images/climbingguide.svg" height="100" width="100"></SVGImage>-->
+      </grid-layout>
+      
+      <stack-layout row="1" backgroundColor="lightgray">
+         <router-outlet row="1"></router-outlet>
+      </stack-layout>
+
+      <grid-layout row="2" columns="*,*,*,*">
+         <Label col="0" class="fa fa-24" text="&#xf015;" horizontalAlignment="center" (tap)="onNavItemTap('/home')"></Label>
+         <Label col="1" class="fa fa-24" text="&#xf007;" horizontalAlignment="center" (tap)="onNavItemTap('/user')"></Label>
+         <Label col="2" class="fa fa-24" text="&#xf02d;" horizontalAlignment="center" (tap)="onNavItemTap('/guide')"></Label>
+         <Label col="3" class="fa fa-24" text="&#xf5a0;" horizontalAlignment="center" (tap)="onNavItemTap('/map')"></Label>
+      </grid-layout>
+   </grid-layout>
+</RadSideDrawer>

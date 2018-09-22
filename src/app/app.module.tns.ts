@@ -3,6 +3,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 // nativescript
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
+import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+import { NativeScriptSvgModule } from 'nativescript-svg/angular';
 // vendor dependencies
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -24,6 +26,8 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         NativeScriptModule,
         NativeScriptHttpModule,
+        NativeScriptUISideDrawerModule,
+        NativeScriptSvgModule,
         // HttpClientModule,
         TranslateModule.forRoot(),
         // TranslateModule.forRoot({

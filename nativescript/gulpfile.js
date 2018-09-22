@@ -119,8 +119,8 @@ gulp.task(
  * For non webpack builds, scss needs to be converted to css
  */
 gulp.task('tns.ComponentStyles', () => {
-    return gulp.src([`${DEST}/**/*.component.scss`], {follow: true})
-        .pipe(replace('.scss\'', '.css\'', { logs: { enabled: true }}))
+    return gulp.src([`${DEST}/**/*.component.ts`], {follow: true})
+        .pipe(replace('.scss\'', '.css\'', { logs: { enabled: false }}))
         .pipe(debug({title: 'tns.ComponentStyles'}))
         .pipe(gulp.dest(DEST, {overwrite: true}));
 });

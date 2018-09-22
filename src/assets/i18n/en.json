@@ -1,10 +1,15 @@
 {
     "menu": {
         "home": "Home",
+        "guide": "Guide",
         "about": "About"
     },
     "home": {
         "title": "Home",
+        "description": "This component is part of a module that was directly imported into the main AppModule."
+    },
+    "guide": {
+        "title": "Guide",
         "description": "This component is part of a module that was directly imported into the main AppModule."
     },
     "about": {

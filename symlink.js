@@ -16,10 +16,12 @@ var webAppPath = './src/app';
 var webFontsPath = './src/fonts';
 var webAssetsPath = './src/assets';
 var webEnvironmentsPath = './src/environments';
+var webStylesPath = './src/styles';
 var nativescriptAppPath = './nativescript/src/app/';
 var nativescriptFontsPath = './nativescript/src/fonts/';
 var nativescriptAssetsPath = './nativescript/src/assets';
 var nativescriptEnvironmentsPath = './nativescript/src/environments';
+var nativescriptStylesPath = './nativescript/src/styles';
 
 // Root SymLink Code for Windows
 if (process.argv.length > 2) {
@@ -49,6 +51,9 @@ try {
     }
     if (fs.existsSync(resolve(nativescriptEnvironmentsPath))) {
         fs.unlinkSync(resolve(nativescriptEnvironmentsPath));
+    }
+    if (fs.existsSync(resolve(nativescriptStylesPath))) {
+        fs.unlinkSync(resolve(nativescriptStylesPath));
     }
 } catch (err) {}
 
@@ -125,6 +130,7 @@ function createSymLink() {
     fs.symlinkSync(resolve(webFontsPath), resolve(nativescriptFontsPath), 'junction');
     fs.symlinkSync(resolve(webAssetsPath), resolve(nativescriptAssetsPath), 'junction');
     fs.symlinkSync(resolve(webEnvironmentsPath), resolve(nativescriptEnvironmentsPath), 'junction');
+    fs.symlinkSync(resolve(webStylesPath), resolve(nativescriptStylesPath), 'junction');
 }
 
 function splitPath(v) {
