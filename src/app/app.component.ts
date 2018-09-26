@@ -22,6 +22,8 @@ export class AppComponent implements AfterViewInit, OnInit {
    private _activatedUrl: string;
    private _sideDrawerTransition: DrawerTransitionBase;
 
+   public isLoggedIn: boolean;
+
    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
     private drawer: RadSideDrawer;
 

@@ -1,9 +1,13 @@
 <RadSideDrawer [drawerTransition]="sideDrawerTransition">
    <grid-layout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
-         <stack-layout row="0" class="sidedrawer-header">
+         <stack-layout row="0" class="sidedrawer-header" visibility="{{ isLoggedIn ? 'visible' : 'collapse' }}" (tap)="onNavItemTap('/user')">
             <Label class="sidedrawer-header-image fa" text="&#xf2bd;"></Label>
             <Label class="sidedrawer-header-brand" text="User Name"></Label>
             <Label class="footnote" text="username@mail.com"></Label>
+         </stack-layout>
+         <stack-layout row="0" class="sidedrawer-header" visibility="{{ isLoggedIn ? 'collapse' : 'visible' }}" (tap)="onNavItemTap('/login')">
+            <Label class="sidedrawer-header-image fa" text="&#xf090;"></Label>
+            <Label class="sidedrawer-header-brand" text="Login"></Label>
          </stack-layout>
    
          <scroll-view row="1">
@@ -27,15 +31,15 @@
                      <Label col="0" text="&#xf002;" class="fa"></Label>
                      <Label col="1" text="Search" class="p-r-10"></Label>
                </grid-layout>
-
-               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/featured')" (tap)="onNavItemTap('/featured')">
-                     <Label col="0" text="&#xf005;" class="fa"></Label>
-                     <Label col="1" text="Featured" class="p-r-10"></Label>
-               </grid-layout>
    
                <stack-layout class="hr-light"></stack-layout>
 
-               <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/user')" (tap)="onNavItemTap('/user')">
+               <grid-layout
+                  columns="auto, *"
+                  class="sidedrawer-list-item"
+                  [class.selected]="isComponentSelected('/user')"
+                  (tap)="onNavItemTap('/user')"
+                  visibility="{{ isLoggedIn ? 'visible' : 'collapse' }}">
                      <Label col="0" text="&#xf007;" class="fa"></Label>
                      <Label col="1" text="Profile" class="p-r-10"></Label>
                </grid-layout>

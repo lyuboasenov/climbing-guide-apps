@@ -1,0 +1,21 @@
+<flexbox-layout class="page">
+   <stack-layout class="form">
+      <stack-layout class="input-field">
+         <text-field [hint]="'login.email' | translate" ...></text-field>
+      </stack-layout>
+
+      <stack-layout class="input-field">
+         <text-field [hint]="'login.password' | translate" ...></text-field>
+      </stack-layout>
+
+      <button [text]="'login.button' | translate" (tap)="login()"></button>
+      <label [text]="'login.forgottne-password' | translate" (tap)="forgottenPassword()"></label>
+   </stack-layout>
+
+   <label (tap)="onNavigateTap('/signup')">
+      <FormattedString>
+         <Span [text]="'login.sign-up-1' | translate"></Span>
+         <Span [text]="'login.sign-up-2' | translate" class="bold"></Span>
+      </FormattedString>
+   </label>
+</flexbox-layout>

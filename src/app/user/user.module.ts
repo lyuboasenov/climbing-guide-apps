@@ -1,13 +1,19 @@
 import { NgModule, Optional, SkipSelf, NO_ERRORS_SCHEMA } from '@angular/core';
 // app
 import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { SHARED_MODULES } from './user.common';
 
 @NgModule({
-    imports: [
-        ...SHARED_MODULES
-    ],
-    declarations: [UserComponent]
+   imports: [
+      ...SHARED_MODULES
+   ],
+   declarations: [
+      LoginComponent,
+      SignupComponent,
+      UserComponent
+   ]
 })
 export class UserModule {
 

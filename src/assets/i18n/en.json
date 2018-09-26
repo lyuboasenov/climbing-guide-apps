@@ -18,5 +18,20 @@
     },
     "phone": {
         "edition": "Phone Edition!"
+    },
+    "signup": {
+        "button": "Sign Up",
+        "confirm-password": "Confirm Password",
+        "password": "Password",
+        "email": "Email",
+        "login": "Back to Login"
+    },
+    "login": {
+        "button": "Log In",
+        "forgottne-password": "Forgot your password?",
+        "password": "Password",
+        "email": "Email",
+        "sign-up-1": "Don’t have an account? ",
+        "sign-up-2": "Sign up"
     }
 }

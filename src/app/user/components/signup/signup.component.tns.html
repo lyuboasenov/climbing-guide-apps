@@ -1,0 +1,19 @@
+<flexbox-layout class="page">
+   <stack-layout class="form">
+      <stack-layout class="input-field">
+         <text-field [hint]="'signup.email' | translate" ...></text-field>
+      </stack-layout>
+
+      <stack-layout class="input-field">
+         <text-field [hint]="'signup.confirm-password' | translate" ...></text-field>
+      </stack-layout>
+
+      <stack-layout class="input-field">
+         <text-field [hint]="'signup.confirm-password' | translate" ...></text-field>
+      </stack-layout>
+
+      <button [text]="'signup.button' | translate" (tap)="submit()"></button>
+   </stack-layout>
+
+   <label [text]="'signup.login' | translate" (tap)="onNavigateTap('/login')"></label>
+</flexbox-layout>
