@@ -8,6 +8,7 @@ import { SearchModule } from './search/search.module';
 import { SettingsModule } from './settings/settings.module';
 import { MenuModule } from './menu/menu.module';
 import { UserModule } from './user/user.module';
+import { ServiceModule } from './service/service.module';
 
 export const SHARED_MODULES: any[] = [
     AppRoutingModule,
@@ -18,7 +19,8 @@ export const SHARED_MODULES: any[] = [
     MenuModule,
     SearchModule,
     SettingsModule,
-    UserModule
+    UserModule,
+    ServiceModule
 ];
 
 export * from './app-routing.module';

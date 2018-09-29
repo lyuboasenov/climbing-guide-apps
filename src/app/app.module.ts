@@ -7,6 +7,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // app
 import { Config } from './common/index';
 import { AppComponent } from './app.component';
+import { AuthenticationService } from './service/services/authentication.service';
 import { SHARED_MODULES } from './app.common';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -29,7 +30,7 @@ export function createTranslateLoader(http: Http) {
         }),
         ...SHARED_MODULES
     ],
-    providers: [],
+    providers: [ AuthenticationService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {}

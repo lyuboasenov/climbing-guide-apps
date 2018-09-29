@@ -1,14 +1,14 @@
 <flexbox-layout class="page">
    <stack-layout class="form">
       <stack-layout class="input-field">
-         <text-field [hint]="'login.email' | translate" ...></text-field>
+         <text-field #email [hint]="'login.email' | translate" ...></text-field>
       </stack-layout>
 
       <stack-layout class="input-field">
-         <text-field [hint]="'login.password' | translate" ...></text-field>
+         <text-field #password [hint]="'login.password' | translate" (text)="password" ...></text-field>
       </stack-layout>
 
-      <button [text]="'login.button' | translate" (tap)="login()"></button>
+      <button [text]="'login.button' | translate" (tap)="login(email.text, password.text)"></button>
       <label [text]="'login.forgottne-password' | translate" (tap)="forgottenPassword()"></label>
    </stack-layout>
 

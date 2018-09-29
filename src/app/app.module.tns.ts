@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // app
 import { Config } from './common/index';
 import { AppComponent } from './app.component';
+import { AuthenticationService } from './service/services/authentication.service';
 import { SHARED_MODULES } from './app.common';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.MOBILE_NATIVE;
@@ -20,30 +21,33 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
-    imports: [
-        NativeScriptModule,
-        NativeScriptHttpModule,
-        NativeScriptUISideDrawerModule,
-        NativeScriptSvgModule,
-        // HttpClientModule,
-        TranslateModule.forRoot(),
-        // TranslateModule.forRoot({
-        //     loader: {
-        //         provide: TranslateLoader,
-        //         useFactory: (createTranslateLoader),
-        //         deps: [HttpClient]
-        //     }
-        // }),
-        ...SHARED_MODULES
-    ],
-    declarations: [
-        AppComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+   bootstrap: [
+      AppComponent
+   ],
+   imports: [
+      NativeScriptModule,
+      NativeScriptHttpModule,
+      NativeScriptUISideDrawerModule,
+      NativeScriptSvgModule,
+      HttpClientModule,
+      TranslateModule.forRoot(),
+      // TranslateModule.forRoot({
+      //     loader: {
+      //         provide: TranslateLoader,
+      //         useFactory: (createTranslateLoader),
+      //         deps: [HttpClient]
+      //     }
+      // }),
+      ...SHARED_MODULES
+   ],
+   declarations: [
+      AppComponent
+   ],
+   schemas: [
+      NO_ERRORS_SCHEMA
+   ],
+   providers: [
+      AuthenticationService
+   ]
 })
 export class AppModule { }

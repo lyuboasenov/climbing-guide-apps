@@ -4,6 +4,7 @@ import { BaseService } from './base.service';
 import { User } from '../models/user';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import * as localStorage from 'nativescript-localstorage';
 
 @Injectable()
 export class AuthenticationService extends BaseService {
