@@ -6,7 +6,6 @@
             <Label class="footnote" text="username@mail.com"></Label>
          </stack-layout>
          <stack-layout row="0" class="sidedrawer-header" visibility="{{ isLoggedIn ? 'collapse' : 'visible' }}" (tap)="onNavItemTap('/login')">
-            <Label class="sidedrawer-header-image fa" text="&#xf090;"></Label>
             <Label class="sidedrawer-header-brand" text="Login"></Label>
          </stack-layout>
    
@@ -46,6 +45,16 @@
                      <Label col="1" text="Profile" class="p-r-10"></Label>
                </grid-layout>
 
+               <grid-layout
+                  columns="auto, *"
+                  class="sidedrawer-list-item"
+                  [class.selected]="isComponentSelected('/login')"
+                  (tap)="onNavItemTap('/login')"
+                  visibility="{{ isLoggedIn ? 'collapse' : 'visible' }}">
+                     <Label col="0" text="&#xf2f6;" class="fa"></Label>
+                     <Label col="1" text="Login" class="p-r-10"></Label>
+               </grid-layout>
+
                <grid-layout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
                      <Label col="0" text="&#xf013;" class="fa"></Label>
                      <Label col="1" text="Settings" class="p-r-10"></Label>
@@ -54,17 +63,18 @@
          </scroll-view>
    </grid-layout>
 
-   <grid-layout tkMainContent rows="auto,*,auto">
-      <grid-layout row="0" columns="auto,*">
-         <Label col="0" row="0" class="fa fa-36" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
-         <!--<SVGImage col="1" row="0" src="~/assets/images/climbingguide.svg" height="100" width="100"></SVGImage>-->
+   <grid-layout tkMainContent rows="auto,*,auto" class="container grid-layout">
+      <grid-layout row="0" columns="auto,*" class="grid-layout">
+         <!-- <Label col="0" row="0" class="fa fa-36" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label> -->
+         <image col="0" row="0" src="res://icon" class="hamburger" (tap)="onDrawerButtonTap()"></image>
+         <image col="1" row="0" src="res://name" class="action-icon"></image>
       </grid-layout>
-      
-      <stack-layout row="1" backgroundColor="lightgray">
-         <router-outlet row="1"></router-outlet>
-      </stack-layout>
 
-      <grid-layout row="2" columns="*,*,*,*">
+      <grid-layout row="1" class="grid-layout">
+         <router-outlet></router-outlet>
+      </grid-layout>
+
+      <grid-layout row="2" columns="*,*,*,*" class="grid-layout">
          <Label col="0" class="fa fa-24" text="&#xf015;" horizontalAlignment="center" (tap)="onNavItemTap('/home')"></Label>
          <Label col="1" class="fa fa-24" text="&#xf007;" horizontalAlignment="center" (tap)="onNavItemTap('/user')"></Label>
          <Label col="2" class="fa fa-24" text="&#xf02d;" horizontalAlignment="center" (tap)="onNavItemTap('/guide')"></Label>

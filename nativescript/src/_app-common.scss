@@ -1,7 +1,7 @@
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
-// for example 'nativescript-theme-core/scss/dark'.
-@import '~nativescript-theme-core/scss/light';
+// for example 'nativescript-theme-core/scss/light'.
+@import '~nativescript-theme-core/scss/dark';
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
 
@@ -11,26 +11,34 @@
 // Import common styles
 @import 'styles/cg-common.scss';
 
-// Import material icons
-@import 'styles/materialicons.scss';
-
 // Import font awesome
 @import 'styles/fontawesome.scss';
 
 // Import font awesome solid
 @import 'styles/solid.scss';
 
-.container {
-    margin:40;
+
+.container {}
+
+.hamburger {
+   width:50;
+   height:50;
+   margin:5;
+}
+
+.action-icon {
+   margin-left:15;
+   margin-right:15;
 }
 
 .h1 {
-    font-size:32px;
-    font-weight:bold;
+   font-size:32px;
+   font-weight:bold;
 }
 
 .page {
    align-items: center;
+   justify-content: space-between;
    flex-direction: column;
 }
 
@@ -39,4 +47,26 @@
    margin-right: 30;
    flex-grow: 2;
    vertical-align: middle;
+}
+
+.input-field {
+   margin-bottom: 5;
+}
+
+.input {
+   font-size: 18;
+   placeholder-color: #A8A8A8;
+}
+
+.btn-primary {
+   height: 50;
+   margin: 15 5 10 5;
+   background-color: #78909C;
+   border-radius: 5;
+   font-size: 20;
+   font-weight: 600;
+}
+
+.grid-layout {
+   background-color: $background;
 }

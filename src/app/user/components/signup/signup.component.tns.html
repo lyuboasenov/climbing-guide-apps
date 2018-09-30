@@ -1,19 +1,23 @@
 <flexbox-layout class="page">
    <stack-layout class="form">
+
       <stack-layout class="input-field">
-         <text-field [hint]="'signup.email' | translate" ...></text-field>
+         <text-field #email [hint]="'signup.email' | translate" class="input"></text-field>
+         <stack-layout class="hr-light"></stack-layout>
       </stack-layout>
 
       <stack-layout class="input-field">
-         <text-field [hint]="'signup.confirm-password' | translate" ...></text-field>
+         <text-field #password [hint]="'signup.password' | translate" (text)="password" secure="true" class="input"></text-field>
+         <stack-layout class="hr-light"></stack-layout>
       </stack-layout>
 
       <stack-layout class="input-field">
-         <text-field [hint]="'signup.confirm-password' | translate" ...></text-field>
+         <text-field #confirmPassword [hint]="'signup.confirm-password' | translate" secure="true" class="input"></text-field>
+         <stack-layout class="hr-light"></stack-layout>
       </stack-layout>
 
-      <button [text]="'signup.button' | translate" (tap)="submit()"></button>
+      <button [text]="'signup.button' | translate" (tap)="submit(email.text, password.text, confirmPassword.text)" class="btn btn-primary m-t-20"></button>
    </stack-layout>
 
-   <label [text]="'signup.login' | translate" (tap)="onNavigateTap('/login')"></label>
+   <label [text]="'signup.login' | translate" (tap)="onNavigateTap('/login')" class="login-label sign-up-label"></label>
 </flexbox-layout>

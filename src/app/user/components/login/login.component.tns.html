@@ -1,22 +1,21 @@
 <flexbox-layout class="page">
    <stack-layout class="form">
 
-      <image class="logo" src="res://icon"></image>
-      <label class="header" text="Climbing Guide"></label>
-
       <stack-layout class="input-field">
-         <text-field #email [hint]="'login.email' | translate" ...></text-field>
+         <text-field #email [hint]="'login.email' | translate" class="input"></text-field>
+         <stack-layout class="hr-light"></stack-layout>
       </stack-layout>
 
       <stack-layout class="input-field">
-         <text-field #password [hint]="'login.password' | translate" (text)="password" ...></text-field>
+         <text-field #password [hint]="'login.password' | translate" (text)="password" secure="true" class="input"></text-field>
+         <stack-layout class="hr-light"></stack-layout>
       </stack-layout>
 
-      <button [text]="'login.button' | translate" (tap)="login(email.text, password.text)"></button>
-      <label [text]="'login.forgottne-password' | translate" (tap)="forgottenPassword()"></label>
+      <button [text]="'login.button' | translate" (tap)="login(email.text, password.text)" class="btn btn-primary m-t-20"></button>
+      <label [text]="'login.forgottne-password' | translate" (tap)="forgottenPassword()" class="login-label"></label>
    </stack-layout>
 
-   <label (tap)="onNavigateTap('/signup')">
+   <label (tap)="onNavigateTap('/signup')" class="login-label sign-up-label">
       <FormattedString>
          <Span [text]="'login.sign-up-1' | translate"></Span>
          <Span [text]="'login.sign-up-2' | translate" class="bold"></Span>
