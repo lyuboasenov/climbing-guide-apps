@@ -16,7 +16,7 @@
          <stack-layout class="hr-light"></stack-layout>
       </stack-layout>
 
-      <button [text]="'signup.button' | translate" (tap)="submit(email.text, password.text, confirmPassword.text)" class="btn btn-primary m-t-20"></button>
+      <button [text]="'signup.button' | translate" (tap)="signup(email.text, password.text, confirmPassword.text)" class="btn btn-primary m-t-20"></button>
    </stack-layout>
 
    <label [text]="'signup.login' | translate" (tap)="onNavigateTap('/login')" class="login-label sign-up-label"></label>

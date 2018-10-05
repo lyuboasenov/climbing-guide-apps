@@ -32,16 +32,17 @@ export class LoginComponent implements OnInit {
    }
 
    login(email: string, password: string): void {
-      // TODO
-      // log the fuck in
-      prompt({
-         title: 'Logging in',
-         message: 'Email: ' + email + ' / password: ' + password,
-         defaultText: '',
-         okButtonText: 'Ok',
-         cancelButtonText: 'Cancel'
+      this.authenticationService.login(email, password).map((data: any) => {
+         if (data.result) {
+            this.onNavigateTap('/home');
+         } else {
+            alert({
+               title: "'login.invalid-user-title' | translate",
+               message: "'login.invalid-user-message' | translate",
+               okButtonText: "'common.ok' | translate"
+            });
+         }
       });
-      // this.authenticationService.login(this.email, this.password);
    }
 
    forgottenPassword(): void {

@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { BaseService } from './base.service';
 import { User } from '../models/user';
 import { Observable } from 'rxjs/Observable';
+import { Buffer } from 'buffer';
 import 'rxjs/add/operator/map';
 import * as localStorage from 'nativescript-localstorage';
 
@@ -34,7 +35,7 @@ export class AuthenticationService extends BaseService {
             body.toString(),
             {
                 headers: new HttpHeaders()
-                    .set( 'Authorization', 'Basic ' + btoa( `${this.clientId}:${this.clientSecret}` ) )
+                    .set( 'Authorization', 'Basic ' + Buffer.from( `${this.clientId}:${this.clientSecret}` ).toString('base64') )
                     .set( 'Content-Type', 'application/x-www-form-urlencoded' )
             } )
             .map(( data: any ) => {

@@ -20,6 +20,10 @@ export class SignupComponent implements OnInit {
 
    }
 
+   signup(email: string, password: string, confirmPassword: string) {
+      
+   }
+
    onNavigateTap(navRoute: string): void {
       this.routerExtensions.navigate([navRoute], {
          transition: {

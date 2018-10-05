@@ -1,37 +1,42 @@
 {
-    "menu": {
-        "home": "Home",
-        "guide": "Guide",
-        "about": "About"
-    },
-    "home": {
-        "title": "Home",
-        "description": "This component is part of a module that was directly imported into the main AppModule."
-    },
-    "guide": {
-        "title": "Guide",
-        "description": "This component is part of a module that was directly imported into the main AppModule."
-    },
-    "about": {
-        "title": "About",
-        "description": "This component was rendered from a lazy-loaded module."
-    },
-    "phone": {
-        "edition": "Phone Edition!"
-    },
-    "signup": {
-        "button": "Sign Up",
-        "confirm-password": "Confirm Password",
-        "password": "Password",
-        "email": "Email",
-        "login": "Back to Login"
-    },
-    "login": {
-        "button": "Log In",
-        "forgottne-password": "Forgot your password?",
-        "password": "Password",
-        "email": "Email",
-        "sign-up-1": "Don’t have an account? ",
-        "sign-up-2": "Sign up"
-    }
+   "common": {
+      "ok": "OK"
+   },
+   "menu": {
+      "home": "Home",
+      "guide": "Guide",
+      "about": "About"
+   },
+   "home": {
+      "title": "Home",
+      "description": "This component is part of a module that was directly imported into the main AppModule."
+   },
+   "guide": {
+      "title": "Guide",
+      "description": "This component is part of a module that was directly imported into the main AppModule."
+   },
+   "about": {
+      "title": "About",
+      "description": "This component was rendered from a lazy-loaded module."
+   },
+   "phone": {
+      "edition": "Phone Edition!"
+   },
+   "signup": {
+      "button": "Sign Up",
+      "confirm-password": "Confirm Password",
+      "password": "Password",
+      "email": "Email",
+      "login": "Back to Login"
+   },
+   "login": {
+      "button": "Log In",
+      "forgottne-password": "Forgot your password?",
+      "password": "Password",
+      "email": "Email",
+      "sign-up-1": "Don’t have an account? ",
+      "sign-up-2": "Sign up",
+      "invalid-user-title": "Invalid user",
+      "invalid-user-message": "Invalid user email or password"
+   }
 }
